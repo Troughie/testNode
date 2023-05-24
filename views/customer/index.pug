@@ -1,0 +1,25 @@
+
+extends ../layout
+block content 
+    h3 
+        a(href="/customers/create") Create New Product 
+    h1 View All Products 
+    table 
+        thead 
+            tr 
+                th Id 
+                th Name 
+                th email 
+                th Image 
+                th Actions
+        tbody 
+            each item in customer
+                tr 
+                    td=item.id 
+                    td=item.name 
+                    td=item.email  
+                    td 
+                        img(src="/images/" + item.image, style="width:100px; height:auto;")         
+                    td 
+                        a(href="/customers/edit/"+item.id) Edit   
+                        a(href="/customers/delete/"+item.id) Delete

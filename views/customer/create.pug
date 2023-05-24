@@ -1,0 +1,16 @@
+
+extends ../layout
+block content 
+    h1 Create new customer 
+    form(action='/customers/create', method='post', enctype='multipart/form-data')
+        div 
+            |Name: 
+            input(name='name')
+        div
+            |email: 
+            input(name='email')
+        div 
+            |Image: 
+            input(type="file" name='image' multiple)
+        div 
+            input(type="submit" value='Create')            

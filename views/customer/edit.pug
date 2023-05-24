@@ -1,0 +1,16 @@
+extends ../layout
+block content 
+    h1 Create new customer 
+    form(action='/customers/create', method='post', enctype='multipart/form-data')
+        div 
+            |Name: 
+            input(name='name' value=customer.name)
+        div
+            |email: 
+            input(name='email' value=customer.email)
+        div 
+            |Image: 
+            input(type="file" name='image' multiple value=customer.image)
+            img(src="/images/" + customer.image, style="width:100px; height:auto;")         
+        div 
+            input(type="submit" value='Update')            
